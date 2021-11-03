@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/pse-ladder/static/js/main.f14e7bf2.chunk.js",
-    "main.js.map": "/pse-ladder/static/js/main.f14e7bf2.chunk.js.map",
+    "main.js": "/pse-ladder/static/js/main.cd2c3015.chunk.js",
+    "main.js.map": "/pse-ladder/static/js/main.cd2c3015.chunk.js.map",
     "runtime-main.js": "/pse-ladder/static/js/runtime-main.db16ef68.js",
     "runtime-main.js.map": "/pse-ladder/static/js/runtime-main.db16ef68.js.map",
     "static/js/2.df59f302.chunk.js": "/pse-ladder/static/js/2.df59f302.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.db16ef68.js",
     "static/js/2.df59f302.chunk.js",
-    "static/js/main.f14e7bf2.chunk.js"
+    "static/js/main.cd2c3015.chunk.js"
   ]
 }
