@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../components/Button";
+import routes from "../routes";
 import DeltaData from "./DeltaLadder";
 
 const RepetList = styled.ul`
@@ -81,7 +82,7 @@ function Delta() {
     const range = [...Array(DeltaData.length)].map((v, i) => i);
     if (day === "home") {
       const dayList = range.map((prop) => (
-        <Link key={prop} to={`/delta/${prop}/home`}>
+        <Link key={prop} to={`${routes.home}/delta/${prop}/home`}>
           <Button>Day {prop + 3}</Button>
         </Link>
       ));
@@ -93,7 +94,7 @@ function Delta() {
       );
     } else if (number === "home") {
       const expList = DeltaData[day].map((prop, index) => (
-        <Link key={index} to={`/delta/${day}/${index}`}>
+        <Link key={index} to={`${routes.home}/delta/${day}/${index}`}>
           <Button>{index + 1}</Button>
         </Link>
       ));
@@ -135,12 +136,12 @@ function Delta() {
             <>
               {isLastNumber ? null : (
                 <>
-                  <Link to={`/delta/0/${parseInt(number) + 1}`}>
+                  <Link to={`${routes.home}/delta/0/${parseInt(number) + 1}`}>
                     <Button onClick={undefined}>다음 사다리</Button>
-                  </Link>{" "}
+                  </Link>
                 </>
               )}
-              <Link to={`/delta/0/home`}>
+              <Link to={`${routes.home}/delta/0/home`}>
                 <Button>사다리 종료</Button>
               </Link>
             </>

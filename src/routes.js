@@ -1,5 +1,5 @@
 const routes = {
-  home: "/",
-  delta: "/delta/:day/:number",
+  home: "/pse-ladder",
+  delta: "/pse-ladder/delta/:day/:number",
 };
 export default routes;
