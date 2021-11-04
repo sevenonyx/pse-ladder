@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Button, Badge, CloseButton } from "react-bootstrap";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import routes from "../routes";
 import DeltaData from "./DeltaLadder";
 
@@ -41,6 +41,7 @@ const EngText = styled.h2`
 
 let currentIdx = 0;
 function Delta() {
+  const history = useHistory();
   const { day, number } = useParams();
   const [ladderIdx, setLadderIdx] = useState(0);
   const [currentCount, setCurrentCount] = useState(0);
@@ -65,6 +66,10 @@ function Delta() {
       }
     }
   }, [number, day, ladderList]);
+
+  const handleClick = (path) => {
+    history.push(path);
+  };
 
   const initLadderList = () => {
     let resultList = Array(8);
@@ -113,7 +118,8 @@ function Delta() {
       const dayList = range.map((prop) => (
         <Button
           key={prop}
-          href={`${routes.home}/delta/${prop}/home`}
+          onClick={() => handleClick(`/delta/${prop}/home`)}
+          // href={`${routes.home}/delta/${prop}/home`}
           variant="outline-primary"
           size="lg"
         >
@@ -138,7 +144,8 @@ function Delta() {
       const expList = DeltaData[day].map((prop, index) => (
         <Button
           key={index}
-          href={`${routes.home}/delta/${day}/${index}`}
+          onClick={() => handleClick(`/delta/${day}/${index}`)}
+          // href={`${routes.home}/delta/${day}/${index}`}
           variant="outline-primary"
           size="lg"
         >
@@ -151,7 +158,7 @@ function Delta() {
             <h1>🇺🇸 PSE Delta Day {parseInt(day) + 3}</h1>
             <h5>같이 열심히 공부해요!</h5>
           </Header>
-          <Link to={`${routes.home}/delta/home/home`}>
+          <Link to={`/delta/home/home`}>
             <CloseButton style={{ position: "absolute", right: 15, top: 15 }} />
           </Link>
           <div className="d-grid gap-2" style={{ marginBottom: 70 }}>
@@ -189,7 +196,7 @@ function Delta() {
               )}
             </h1>
           </Header>
-          <Link to={`${routes.home}/delta/${day}/home`}>
+          <Link to={`/delta/${day}/home`}>
             <CloseButton style={{ position: "absolute", right: 15, top: 15 }} />
           </Link>
           <h3>
@@ -213,7 +220,9 @@ function Delta() {
               {isLast ? (
                 <>
                   <Button
-                    href={`${routes.home}/delta/0/${parseInt(number)}`}
+                    onClick={() => history.go(0)}
+                    //onClick={() => handleClick(`/delta/0/${parseInt(number)}`)}
+                    // href={`${routes.home}/delta/0/${parseInt(number)}`}
                     variant="success"
                     size="lg"
                   >
@@ -221,7 +230,10 @@ function Delta() {
                   </Button>
                   {isLastNumber ? null : (
                     <Button
-                      href={`${routes.home}/delta/0/${parseInt(number) + 1}`}
+                      onClick={() =>
+                        handleClick(`/delta/0/${parseInt(number) + 1}`)
+                      }
+                      // href={`${routes.home}/delta/0/${parseInt(number) + 1}`}
                       variant="primary"
                       size="lg"
                     >
@@ -229,7 +241,8 @@ function Delta() {
                     </Button>
                   )}
                   <Button
-                    href={`${routes.home}/delta/0/home`}
+                    onClick={() => handleClick(`/delta/0/home`)}
+                    // href={`${routes.home}/delta/0/home`}
                     variant="danger"
                     size="lg"
                   >

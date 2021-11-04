@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import routes from "./routes";
 import Delta from "./screens/Delta";

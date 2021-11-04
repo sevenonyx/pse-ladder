@@ -1,4 +1,4 @@
-import routes from "../routes";
+import { useHistory } from "react-router-dom";
 import { Container, Button } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -15,6 +15,10 @@ const Footer = styled.div`
   background-color: snow;
 `;
 function Home() {
+  const history = useHistory();
+  const handleClick = (path) => {
+    history.push(path);
+  };
   return (
     <Container>
       <Header>
@@ -24,7 +28,8 @@ function Home() {
 
       <div className="d-grid gap-2">
         <Button
-          href={`${routes.home}/delta/home/home`}
+          // href={`/delta/home/home/`}
+          onClick={() => handleClick("/delta/home/home/")}
           variant="outline-primary"
           size="lg"
         >
