@@ -1,24 +1,44 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Container, Button, Badge, CloseButton } from "react-bootstrap";
 import styled from "styled-components";
-import Button from "../components/Button";
+import { Link } from "react-router-dom";
 import routes from "../routes";
 import DeltaData from "./DeltaLadder";
 
-const RepetList = styled.ul`
-  list-style: none;
-  padding-left: 10px;
-  display: inline;
-  li {
-    float: left;
-    font-size: 25px;
-    margin-left: 15px;
-    padding: 5px;
-  }
+const Header = styled.div`
+  margin-bottom: 25px;
+`;
+const Footer = styled.div`
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  padding: 15px 25px;
+  text-align: right;
+  background-color: snow;
+`;
+const ButtonFooter = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 25px;
+  text-align: center;
+  background-color: snow;
 `;
 
-let ladderList = [];
+const KorText = styled.h1`
+  font-weight: bold;
+  font-size: xx-large;
+  margin-top: 35px;
+  margin-bottom: 50px;
+`;
+const EngText = styled.h2`
+  font-size: xx-large;
+`;
+
 let currentIdx = 0;
 function Delta() {
   const { day, number } = useParams();
@@ -26,16 +46,17 @@ function Delta() {
   const [currentCount, setCurrentCount] = useState(0);
   const [isLast, setLast] = useState(false);
   const [isLastNumber, setLastNumber] = useState(false);
+  const [ladderList, setLadderList] = useState([]);
+  const [repetLimit, setRepetLimit] = useState(0);
 
   useEffect(() => {
     setLast(false);
     setLastNumber(false);
     if (ladderList.length === 0) {
-      ladderList = initLadderList();
+      setLadderList(initLadderList());
     }
     if (number !== "home") {
       currentIdx = 0;
-      ladderList = initLadderList();
       setLadderIdx(0);
       setCurrentCount(0);
       // 마지막 사다리의 경우 다음 사다리 이동 버튼을 제외하기 위해 상태값을 관리
@@ -43,7 +64,7 @@ function Delta() {
         setLastNumber(true);
       }
     }
-  }, [number, day]);
+  }, [number, day, ladderList]);
 
   const initLadderList = () => {
     let resultList = Array(8);
@@ -60,11 +81,7 @@ function Delta() {
   const nextExp = () => {
     const currentLadder = ladderList[ladderIdx];
     if (currentIdx === currentLadder.length - 1) {
-      const idx = ladderIdx + 1;
-      currentIdx = 0;
-
-      setLadderIdx(idx);
-      setCurrentCount(ladderList[idx][currentIdx]);
+      goNextLadder();
     } else {
       currentIdx = currentIdx + 1;
       setCurrentCount(ladderList[ladderIdx][currentIdx]);
@@ -73,7 +90,19 @@ function Delta() {
         setLast(true);
     }
   };
+  const goNextLadder = () => {
+    const idx = ladderIdx + 1;
+    currentIdx = 0;
+    setLadderIdx(idx);
+    setRepetLimit(0);
+    setCurrentCount(ladderList[idx][currentIdx]);
+  };
   const repetExp = () => {
+    //반복은 최대 2회
+    if (repetLimit >= 2) {
+      return;
+    }
+    setRepetLimit(repetLimit + 1);
     ladderList[ladderIdx + 1].push(currentCount);
     nextExp();
   };
@@ -82,27 +111,56 @@ function Delta() {
     const range = [...Array(DeltaData.length)].map((v, i) => i);
     if (day === "home") {
       const dayList = range.map((prop) => (
-        <Link key={prop} to={`${routes.home}/delta/${prop}/home`}>
-          <Button>Day {prop + 3}</Button>
-        </Link>
+        <Button
+          key={prop}
+          href={`${routes.home}/delta/${prop}/home`}
+          variant="outline-primary"
+          size="lg"
+        >
+          Day {prop + 3}
+        </Button>
       ));
       return (
-        <div>
-          <h1>PSE Delta</h1>
-          {dayList}
-        </div>
+        <Container>
+          <Header>
+            <h1>PSE Delta 🥰</h1>
+          </Header>
+          <Link to={`${routes.home}`}>
+            <CloseButton style={{ position: "absolute", right: 15, top: 15 }} />
+          </Link>
+          <div className="d-grid gap-2">{dayList}</div>
+          <Footer>
+            <p>학습진도에 따라 계속 추가됩니다 😉</p>
+          </Footer>
+        </Container>
       );
     } else if (number === "home") {
       const expList = DeltaData[day].map((prop, index) => (
-        <Link key={index} to={`${routes.home}/delta/${day}/${index}`}>
-          <Button>{index + 1}</Button>
-        </Link>
+        <Button
+          key={index}
+          href={`${routes.home}/delta/${day}/${index}`}
+          variant="outline-primary"
+          size="lg"
+        >
+          {index + 1}
+        </Button>
       ));
       return (
-        <div>
-          <h1>PSE Delta Day {parseInt(day) + 3}</h1>
-          {expList}
-        </div>
+        <Container>
+          <Header>
+            <h1>🇺🇸 PSE Delta Day {parseInt(day) + 3}</h1>
+            <h5>같이 열심히 공부해요!</h5>
+          </Header>
+          <Link to={`${routes.home}/delta/home/home`}>
+            <CloseButton style={{ position: "absolute", right: 15, top: 15 }} />
+          </Link>
+          <div className="d-grid gap-2" style={{ marginBottom: 70 }}>
+            {expList}
+          </div>
+          <Footer>
+            <p>오타나 버그를 알려주시면 정말 감사해요 😘</p>
+          </Footer>
+        </Container>
       );
     }
   };
@@ -112,51 +170,91 @@ function Delta() {
       {number === "home" ? (
         deltaList()
       ) : (
-        <div>
-          <h2>
-            Day {parseInt(day) + 3} - {parseInt(number) + 1}
-          </h2>
-          <h2>STEP {ladderIdx + 1} / 8</h2>
-          <RepetList>
+        <Container>
+          <Header>
+            <h1>
+              <Badge bg="primary">Day {parseInt(day) + 3}</Badge> {"  "}
+              <Badge bg="primary">{parseInt(number) + 1}번</Badge> {"  "}
+              <Badge bg={ladderIdx >= 4 ? "warning" : "primary"}>
+                STEP {ladderIdx + 1} / 8
+              </Badge>{" "}
+              {ladderIdx >= 7 ? null : (
+                <Button
+                  onClick={() => goNextLadder()}
+                  variant="danger"
+                  size="sm"
+                >
+                  넘기기
+                </Button>
+              )}
+            </h1>
+          </Header>
+          <Link to={`${routes.home}/delta/${day}/home`}>
+            <CloseButton style={{ position: "absolute", right: 15, top: 15 }} />
+          </Link>
+          <h3>
             {ladderList[ladderIdx]?.map((prop, idx) => (
-              <li
-                style={{
-                  color: currentIdx === idx ? "blue" : "black",
-                  fontWeight: currentIdx === idx ? "bold" : "normal",
-                }}
+              <Badge
+                pill
                 key={idx}
+                bg={currentIdx === idx ? "primary" : "secondary"}
+                style={{ marginRight: 10 }}
               >
                 {prop + 1}
-              </li>
+              </Badge>
             ))}
-          </RepetList>
-          <h1>{DeltaData[day][number][currentCount].kor}</h1>
-          <h1>{DeltaData[day][number][currentCount].eng}</h1>
-          {isLast ? (
-            <>
-              {isLastNumber ? null : (
-                <>
-                  <Link to={`${routes.home}/delta/0/${parseInt(number) + 1}`}>
-                    <Button onClick={undefined}>다음 사다리</Button>
-                  </Link>
-                </>
-              )}
-              <Link to={`${routes.home}/delta/0/home`}>
-                <Button>사다리 종료</Button>
-              </Link>
-            </>
-          ) : (
-            <>
-              {ladderIdx >= 7 ? null : (
-                <>
-                  <Button onClick={repetExp}>반복</Button>
-                </>
-              )}
+          </h3>
 
-              <Button onClick={nextExp}>다음</Button>
-            </>
-          )}
-        </div>
+          <KorText>{DeltaData[day][number][currentCount].kor}</KorText>
+          <EngText>{DeltaData[day][number][currentCount].eng}</EngText>
+
+          <ButtonFooter>
+            <div className="d-grid gap-2">
+              {isLast ? (
+                <>
+                  <Button
+                    href={`${routes.home}/delta/0/${parseInt(number)}`}
+                    variant="success"
+                    size="lg"
+                  >
+                    다시하기
+                  </Button>
+                  {isLastNumber ? null : (
+                    <Button
+                      href={`${routes.home}/delta/0/${parseInt(number) + 1}`}
+                      variant="primary"
+                      size="lg"
+                    >
+                      다음 사다리
+                    </Button>
+                  )}
+                  <Button
+                    href={`${routes.home}/delta/0/home`}
+                    variant="danger"
+                    size="lg"
+                  >
+                    사다리 종료
+                  </Button>
+                </>
+              ) : (
+                <>
+                  {ladderIdx >= 7 ? null : (
+                    <Button
+                      variant={repetLimit >= 2 ? "secondary" : "warning"}
+                      size="lg"
+                      onClick={() => repetExp()}
+                    >
+                      반복
+                    </Button>
+                  )}
+                  <Button variant="success" size="lg" onClick={() => nextExp()}>
+                    다음
+                  </Button>
+                </>
+              )}
+            </div>
+          </ButtonFooter>
+        </Container>
       )}
     </div>
   );

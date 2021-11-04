@@ -1,15 +1,40 @@
-import { Button1 } from "../components/Button";
-import { Link } from "react-router-dom";
 import routes from "../routes";
+import { Container, Button } from "react-bootstrap";
+import styled from "styled-components";
 
+const Header = styled.div`
+  margin-bottom: 25px;
+`;
+const Footer = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 25px;
+  text-align: right;
+  background-color: snow;
+`;
 function Home() {
   return (
-    <div>
-      <h1>PSE Ladder</h1>
-      <Link to={`${routes.home}/delta/home/home`}>
-        <Button1>DELTA</Button1>
-      </Link>
-    </div>
+    <Container>
+      <Header>
+        <h1>PSE Group Study</h1>
+        <h2>사다리 타기 도우미😎</h2>
+      </Header>
+
+      <div className="d-grid gap-2">
+        <Button
+          href={`${routes.home}/delta/home/home`}
+          variant="outline-primary"
+          size="lg"
+        >
+          DELTA
+        </Button>
+      </div>
+      <Footer>
+        <h4>by. Seven</h4>
+      </Footer>
+    </Container>
   );
 }
 
