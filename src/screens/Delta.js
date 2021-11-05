@@ -4,7 +4,8 @@ import { Container, Button, Badge, CloseButton } from "react-bootstrap";
 import styled from "styled-components";
 import { Link, useHistory } from "react-router-dom";
 import routes from "../routes";
-import DeltaData from "./DeltaLadder";
+import DeltaData from "../data/delta-data";
+import { numberFormat } from "../util/strings";
 
 const Header = styled.div`
   margin-bottom: 25px;
@@ -123,7 +124,7 @@ function Delta() {
           variant="outline-primary"
           size="lg"
         >
-          Day {prop + 3}
+          Day {numberFormat(prop + 3)}
         </Button>
       ));
       return (
@@ -132,7 +133,7 @@ function Delta() {
             <h1>PSE Delta 🥰</h1>
           </Header>
           <Link to={`${routes.home}`}>
-            <CloseButton style={{ position: "absolute", right: 15, top: 15 }} />
+            <CloseButton style={{ position: "absolute", right: 25, top: 25 }} />
           </Link>
           <div className="d-grid gap-2">{dayList}</div>
           <Footer>
@@ -143,23 +144,22 @@ function Delta() {
     } else if (number === "home") {
       const expList = DeltaData[day].map((prop, index) => (
         <Button
-          key={index}
+          key={`key${index}`}
           onClick={() => handleClick(`/delta/${day}/${index}`)}
-          // href={`${routes.home}/delta/${day}/${index}`}
           variant="outline-primary"
           size="lg"
         >
-          {index + 1}
+          {numberFormat(index + 1)}
         </Button>
       ));
       return (
         <Container>
           <Header>
-            <h1>🇺🇸 PSE Delta Day {parseInt(day) + 3}</h1>
+            <h1>🇺🇸 PSE Delta Day {numberFormat(parseInt(day) + 3)}</h1>
             <h5>같이 열심히 공부해요!</h5>
           </Header>
           <Link to={`/delta/home/home`}>
-            <CloseButton style={{ position: "absolute", right: 15, top: 15 }} />
+            <CloseButton style={{ position: "absolute", right: 25, top: 25 }} />
           </Link>
           <div className="d-grid gap-2" style={{ marginBottom: 70 }}>
             {expList}
@@ -185,19 +185,10 @@ function Delta() {
               <Badge bg={ladderIdx >= 4 ? "warning" : "primary"}>
                 STEP {ladderIdx + 1} / 8
               </Badge>{" "}
-              {ladderIdx >= 7 ? null : (
-                <Button
-                  onClick={() => goNextLadder()}
-                  variant="danger"
-                  size="sm"
-                >
-                  넘기기
-                </Button>
-              )}
             </h1>
           </Header>
           <Link to={`/delta/${day}/home`}>
-            <CloseButton style={{ position: "absolute", right: 15, top: 15 }} />
+            <CloseButton style={{ position: "absolute", right: 25, top: 25 }} />
           </Link>
           <h3>
             {ladderList[ladderIdx]?.map((prop, idx) => (
@@ -221,8 +212,6 @@ function Delta() {
                 <>
                   <Button
                     onClick={() => history.go(0)}
-                    //onClick={() => handleClick(`/delta/0/${parseInt(number)}`)}
-                    // href={`${routes.home}/delta/0/${parseInt(number)}`}
                     variant="success"
                     size="lg"
                   >
@@ -231,9 +220,8 @@ function Delta() {
                   {isLastNumber ? null : (
                     <Button
                       onClick={() =>
-                        handleClick(`/delta/0/${parseInt(number) + 1}`)
+                        handleClick(`/delta/${day}/${parseInt(number) + 1}`)
                       }
-                      // href={`${routes.home}/delta/0/${parseInt(number) + 1}`}
                       variant="primary"
                       size="lg"
                     >
@@ -241,8 +229,7 @@ function Delta() {
                     </Button>
                   )}
                   <Button
-                    onClick={() => handleClick(`/delta/0/home`)}
-                    // href={`${routes.home}/delta/0/home`}
+                    onClick={() => handleClick(`/delta/${day}/home`)}
                     variant="danger"
                     size="lg"
                   >
@@ -252,13 +239,24 @@ function Delta() {
               ) : (
                 <>
                   {ladderIdx >= 7 ? null : (
-                    <Button
-                      variant={repetLimit >= 2 ? "secondary" : "warning"}
-                      size="lg"
-                      onClick={() => repetExp()}
-                    >
-                      반복
-                    </Button>
+                    <div className="d-flex bd-highlight">
+                      <Button
+                        className="m-1 flex-grow-1"
+                        variant="danger"
+                        size="lg"
+                        onClick={() => goNextLadder()}
+                      >
+                        넘기기
+                      </Button>
+                      <Button
+                        className="m-1 flex-grow-1"
+                        variant={repetLimit >= 2 ? "secondary" : "warning"}
+                        size="lg"
+                        onClick={() => repetExp()}
+                      >
+                        반복
+                      </Button>
+                    </div>
                   )}
                   <Button variant="success" size="lg" onClick={() => nextExp()}>
                     다음

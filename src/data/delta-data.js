@@ -1,3 +1,4 @@
+/* 
 const day0 = [
   [
     {
@@ -18,6 +19,7 @@ const day0 = [
     },
   ],
 ];
+*/
 
 const day3 = [
   [
@@ -41,7 +43,7 @@ const day3 = [
   [
     {
       kor: "이 사람은 내 여동생/누나/언니야.",
-      eng: "This my  sister.",
+      eng: "This is my  sister.",
     },
     {
       kor: "이 사람은 네 여동생/누나/언니야?",
@@ -708,6 +710,8 @@ const day4 = [
     },
   ],
 ];
+
+
 
 const DeltaData = [day3, day4];
 
