@@ -711,8 +711,333 @@ const day4 = [
   ],
 ];
 
+const day5 = [
+  [
+    {
+      kor: "우리 학원은 강남역 근처에 있어.",
+      eng: "My academy is near Gangnam Station.",
+    },
+    {
+      kor: "너희 학원은 강남역 근처에 있어?",
+      eng: "Is your academy near Gangnam Station?",
+    },
+    {
+      kor: "우리 학원은 강남역 근처에 있지 않아.",
+      eng: "My academy isn't near Gangnam Station.",
+    },
+    {
+      kor: "너희 학원은 강남역 근처에 있지 않아?",
+      eng: "Isn't your academy near Gangnam Station?",
+    },
+  ],
+  [
+    {
+      kor: "내 친구들은 술집에 있어.",
+      eng: "My friends are at a bar.",
+    },
+    {
+      kor: "네 친구들은 술집에 있어?",
+      eng: "Are your friends at a bar?",
+    },
+    {
+      kor: "내 친구들은 술집에 있지 않아.",
+      eng: "My friends aren't at a bar.",
+    },
+    {
+      kor: "네 친구들은 술집에 있지 않아?",
+      eng: "Aren't your friends at a bar?",
+    },
+  ],
+  [
+    {
+      kor: "네 지갑이 내 책상 위에 있어.",
+      eng: "Your wallet is on my desk.",
+    },
+    {
+      kor: "내 지갑이 내 책상 위에 있어?",
+      eng: "Is my wallet on my desk?",
+    },
+    {
+      kor: "네 지갑은 내 책상 위에 있지 않아.",
+      eng: "Your wallet isn't on my desk.",
+    },
+    {
+      kor: "내 지갑은내 책상 위에 있지 않아?",
+      eng: "Isn't my wallet on my desk?",
+    },
+  ],
+  [
+    {
+      kor: "리모컨은 소파 밑에 있어.",
+      eng: "The remote is under the couch.",
+    },
+    {
+      kor: "리모컨은 소파 밑에 있어?",
+      eng: "Is the remote under the couch?",
+    },
+    {
+      kor: "리모컨은 소파 밑에 있지 않아.",
+      eng: "The remote isn't under the couch.",
+    },
+    {
+      kor: "리모컨은 소파 밑에 있지 않아?",
+      eng: "Isn't the remote under the couch?",
+    },
+  ],
+  [
+    {
+      kor: "헬스장은 골목을 돌아서 있어요.",
+      eng: "The gym is around the corner.",
+    },
+    {
+      kor: "헬스장은 골목을 돌면 있나요?",
+      eng: "Is the gym around the corner?",
+    },
+    {
+      kor: "헬스장은 골목을 돌아도 있지 않아요.",
+      eng: "The gym isn't around the corner.",
+    },
+    {
+      kor: "헬스장은 골목을 돌면 있지 않나요?",
+      eng: "Isn't the gym around the corner?",
+    },
+  ],
+  [
+    {
+      kor: "병원(동네병원)은 이 길로 내려가면 있어요.",
+      eng: "The doctor's office is down this street.",
+    },
+    {
+      kor: "병원(동네병원)은 이 길로 내려가면 있어요?",
+      eng: "Is the doctor's office down this street?",
+    },
+    {
+      kor: "병원(동네병원)은 이 길로 내려가면 있지 않아요.",
+      eng: "The doctor's office isn't down this street.",
+    },
+    {
+      kor: "병원(동네병원)은 이길로 내려가면 있지 않아요?",
+      eng: "Isn't the doctor's office down this street?",
+    },
+  ],
+  [
+    {
+      kor: "현금인출기는 편의점 앞에 있어요.",
+      eng: "The ATM is in front of the convenience store.",
+    },
+    {
+      kor: "현금인출기는 편의점 앞에 있어요? ",
+      eng: "Is the ATM in front of the convenience store?",
+    },
+    {
+      kor: "현금인출기는 편의점 앞에 있지 않아요.",
+      eng: "The ATM isn't in front of the convenience store.",
+    },
+    {
+      kor: "현금인출기는 편의점 앞에 있지 않아요?",
+      eng: "Isn't the ATM in front of the convenience store?",
+    },
+  ],
+  [
+    {
+      kor: "(순서가) 난 Steve 다음이야.",
+      eng: "I'm after Steve.",
+    },
+    {
+      kor: "(순서가)넌 Steve 다음이야?",
+      eng: "Are you after Steve?",
+    },
+    {
+      kor: "(순서가) 난 Steve 다음이 아니야.",
+      eng: "I'm not after Steve.",
+    },
+    {
+      kor: "(순서가) 넌 Steve 다음 아니야?",
+      eng: "Aren't you after Steve?",
+    },
+  ],
+  [
+    {
+      kor: "걔(남자)는 화장실에 있어.",
+      eng: "He is in the bathroom.",
+    },
+    {
+      kor: "걔 화장실에 있어?",
+      eng: "Is he in the bathroom?",
+    },
+    {
+      kor: "걔는 화장실에 없어.",
+      eng: "He isn't in the bathroom.",
+    },
+    {
+      kor: "걔 화장실에 있지 않아?",
+      eng: "Isn't he in the bathroom?",
+    },
+  ],
+  [
+    {
+      kor: "주차장은 이 건물 뒤에 있습니다.",
+      eng: "The parking lot is behind this building.",
+    },
+    {
+      kor: "주차장은 이 건물 뒤에 있습니까?",
+      eng: "Is the parking lot behind this building.",
+    },
+    {
+      kor: "주차장은 이 건물 뒤에 있지 않습니다.",
+      eng: "The parking lot isn't behind this building.",
+    },
+    {
+      kor: "주차장은 이 건물 뒤에 있지 않습니까?",
+      eng: "Isn't the parking lot behind this building.",
+    },
+  ],
+  [
+    {
+      kor: "내 자리는 네 자리 옆이야.",
+      eng: "My seat is next to yours.",
+    },
+    {
+      kor: "네 자리는 내 자리 옆이야?",
+      eng: "Is your seat is next to mine?",
+    },
+    {
+      kor: "내 자리는 네 자리 옆이 아니야.",
+      eng: "My seat isn't next to yours.",
+    },
+    {
+      kor: "네 자리는 내 자리 옆이 아니야?",
+      eng: "Isn't your seat is next to mine?",
+    },
+  ],
+  [
+    {
+      kor: "시간표는 벽에 붙어 있어요.",
+      eng: "The schedule is on the wall.",
+    },
+    {
+      kor: "시간표는 벽에 붙어 있나요?",
+      eng: "Is the schedule is on the wall.",
+    },
+    {
+      kor: "시간표는 벽에 붙어 있지 않아요.",
+      eng: "The schedule isn't on the wall.",
+    },
+    {
+      kor: "시간표는 벽에 붙어 있지 않나요?",
+      eng: "Isn't the schedule is on the wall.",
+    },
+  ],
+  [
+    {
+      kor: "우리 약속은 10시야.",
+      eng: "Our engagement is at 10.",
+    },
+    {
+      kor: "우리 약속은 10시야?",
+      eng: "Is our engagement at 10?",
+    },
+    {
+      kor: "우리 약속은 10시가 아니야.",
+      eng: "Our engagement isn't at 10.",
+    },
+    {
+      kor: "우리의 약속은 10시 아니야?",
+      eng: "Isn't our engagement at 10?",
+    },
+  ],
+  [
+    {
+      kor: "걔(남자) 생일은 5월에 있어.",
+      eng: "His birthday is in May",
+    },
+    {
+      kor: "걔 생일은 5월에 있어?",
+      eng: "Is his birthday in May?",
+    },
+    {
+      kor: "걔 생일은 5월이 아니야.",
+      eng: "His birthday isn't in May",
+    },
+    {
+      kor: "걔 생일은 5월이 아니야?",
+      eng: "Isn't his birthday in May?",
+    },
+  ],
+  [
+    {
+      kor: "MT는 금요일이야.",
+      eng: "The retreat is on Friday.",
+    },
+    {
+      kor: "MT는 금요일이야?",
+      eng: "Is the retreat on Friday?",
+    },
+    {
+      kor: "MT는 금요일이 아니야.",
+      eng: "The retreat isn't on Friday.",
+    },
+    {
+      kor: "MT는 금요일 아니야?",
+      eng: "Isn't the retreat on Friday?",
+    },
+  ],
+  [
+    {
+      kor: "난 우리 조원들하고 같이 있어.",
+      eng: "I'm with my group members.",
+    },
+    {
+      kor: "넌 너의 조원들하고 같이 있어?",
+      eng: "Are you with your group members?",
+    },
+    {
+      kor: "난 우리 조원들하고 같이 있지 않아.",
+      eng: "I'm not with my group members.",
+    },
+    {
+      kor: "넌 너의 조원들하고 같이 있지 않아?",
+      eng: "Aren't you with your group members?",
+    },
+  ],
+  [
+    {
+      kor: "음성자료(복수)는 인터넷에 있습니다.",
+      eng: "The sound file are on the internet.",
+    },
+    {
+      kor: "음성자료는 인터넷에 있어요?",
+      eng: "Are the sound file on the internet.",
+    },
+    {
+      kor: "음성자료는 인터넷에 있지 않습니다.",
+      eng: "The sound file aren't on the internet.",
+    },
+    {
+      kor: "음성자료는 인터넷에 있지 않아요?",
+      eng: "Aren't the sound file on the internet.",
+    },
+  ],
+  [
+    {
+      kor: "저 식당은 강남에 있어.",
+      eng: "That restaurant is in Gangnam.",
+    },
+    {
+      kor: "저 식당은 강남에 있어?",
+      eng: "Is that restaurant in Gangnam.",
+    },
+    {
+      kor: "저 식당은 강남에 없어.",
+      eng: "That restaurant isn't in Gangnam.",
+    },
+    {
+      kor: "저 식당은 강남에 있지 않아?",
+      eng: "Isn't that restaurant in Gangnam.",
+    },
+  ]
+];
 
-
-const DeltaData = [day3, day4];
+const DeltaData = [day3, day4, day5];
 
 export default DeltaData;

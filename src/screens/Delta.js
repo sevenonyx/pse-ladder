@@ -6,6 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import routes from "../routes";
 import DeltaData from "../data/delta-data";
 import { numberFormat } from "../util/strings";
+import { getRandomInt, shuffle } from "../util/number";
 
 const Header = styled.div`
   margin-bottom: 25px;
@@ -50,40 +51,47 @@ function Delta() {
   const [isLastNumber, setLastNumber] = useState(false);
   const [ladderList, setLadderList] = useState([]);
   const [repetLimit, setRepetLimit] = useState(0);
+  const [isRandomMode, setRandomMode] = useState(false);
 
   useEffect(() => {
     setLast(false);
     setLastNumber(false);
-    if (ladderList.length === 0) {
-      setLadderList(initLadderList());
-    }
+    // if (ladderList.length === 0) {
+    //   setLadderList(initLadderList());
+    // }
     if (number !== "home") {
       currentIdx = 0;
       setLadderIdx(0);
       setCurrentCount(0);
+      setLadderList(initLadderList());
       // 마지막 사다리의 경우 다음 사다리 이동 버튼을 제외하기 위해 상태값을 관리
       if (day !== "home" && parseInt(number) === DeltaData[day].length - 1) {
         setLastNumber(true);
       }
     }
-  }, [number, day, ladderList]);
+  }, [number, day]);
 
   const handleClick = (path) => {
     history.push(path);
   };
 
   const initLadderList = () => {
-    let resultList = Array(8);
+    let resultList = new Array(8);
     resultList[0] = [0];
-    resultList[1] = [0, 1];
+    resultList[1] = [1, 0];
     resultList[2] = [0, 1, 2];
+    shuffle(resultList[2]);
     resultList[3] = [0, 1, 2, 3];
+    shuffle(resultList[3]);
     resultList[4] = [3];
-    resultList[5] = [3, 2];
+    resultList[5] = [2, 3];
     resultList[6] = [3, 2, 1];
+    shuffle(resultList[6]);
     resultList[7] = [3, 2, 1, 0];
+    shuffle(resultList[7]);
     return resultList;
   };
+
   const nextExp = () => {
     const currentLadder = ladderList[ladderIdx];
     if (currentIdx === currentLadder.length - 1) {
@@ -120,7 +128,6 @@ function Delta() {
         <Button
           key={prop}
           onClick={() => handleClick(`/delta/${prop}/home`)}
-          // href={`${routes.home}/delta/${prop}/home`}
           variant="outline-primary"
           size="lg"
         >
@@ -145,7 +152,10 @@ function Delta() {
       const expList = DeltaData[day].map((prop, index) => (
         <Button
           key={`key${index}`}
-          onClick={() => handleClick(`/delta/${day}/${index}`)}
+          onClick={() => {
+            setRandomMode(false);
+            handleClick(`/delta/${day}/${index}`);
+          }}
           variant="outline-primary"
           size="lg"
         >
@@ -162,6 +172,18 @@ function Delta() {
             <CloseButton style={{ position: "absolute", right: 25, top: 25 }} />
           </Link>
           <div className="d-grid gap-2" style={{ marginBottom: 70 }}>
+            <Button
+              onClick={() => {
+                setRandomMode(true);
+                handleClick(
+                  `/delta/${day}/${getRandomInt(0, DeltaData[day].length)}`
+                );
+              }}
+              variant="outline-danger"
+              size="lg"
+            >
+              Random🔥
+            </Button>
             {expList}
           </div>
           <Footer>
@@ -211,13 +233,22 @@ function Delta() {
               {isLast ? (
                 <>
                   <Button
-                    onClick={() => history.go(0)}
+                    onClick={() =>
+                      isRandomMode
+                        ? handleClick(
+                            `/delta/${day}/${getRandomInt(
+                              0,
+                              DeltaData[day].length
+                            )}`
+                          )
+                        : history.go(0)
+                    }
                     variant="success"
                     size="lg"
                   >
                     다시하기
                   </Button>
-                  {isLastNumber ? null : (
+                  {isLastNumber || isRandomMode ? null : (
                     <Button
                       onClick={() =>
                         handleClick(`/delta/${day}/${parseInt(number) + 1}`)
