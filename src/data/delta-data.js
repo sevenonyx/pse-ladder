@@ -754,7 +754,7 @@ const day5 = [
       eng: "Your wallet is on my desk.",
     },
     {
-      kor: "내 지갑이 내 책상 위에 있어?",
+      kor: "내 지갑이 내 책상 위에 있어?",
       eng: "Is my wallet on my desk?",
     },
     {
@@ -762,7 +762,7 @@ const day5 = [
       eng: "Your wallet isn't on my desk.",
     },
     {
-      kor: "내 지갑은내 책상 위에 있지 않아?",
+      kor: "내 지갑은 내 책상 위에 있지 않아?",
       eng: "Isn't my wallet on my desk?",
     },
   ],
@@ -786,19 +786,19 @@ const day5 = [
   ],
   [
     {
-      kor: "헬스장은 골목을 돌아서 있어요.",
+      kor: "헬스장은 골목을 돌아서 있어.",
       eng: "The gym is around the corner.",
     },
     {
-      kor: "헬스장은 골목을 돌면 있나요?",
+      kor: "헬스장은 골목을 돌면 있어?",
       eng: "Is the gym around the corner?",
     },
     {
-      kor: "헬스장은 골목을 돌아도 있지 않아요.",
+      kor: "헬스장은 골목을 돌아도 있지 않아.",
       eng: "The gym isn't around the corner.",
     },
     {
-      kor: "헬스장은 골목을 돌면 있지 않나요?",
+      kor: "헬스장은 골목을 돌면 있지 않아?",
       eng: "Isn't the gym around the corner?",
     },
   ],
@@ -844,7 +844,7 @@ const day5 = [
       eng: "I'm after Steve.",
     },
     {
-      kor: "(순서가)넌 Steve 다음이야?",
+      kor: "(순서가) 넌 Steve 다음이야?",
       eng: "Are you after Steve?",
     },
     {
@@ -876,20 +876,20 @@ const day5 = [
   ],
   [
     {
-      kor: "주차장은 이 건물 뒤에 있습니다.",
+      kor: "주차장은 이 건물 뒤에 있어.",
       eng: "The parking lot is behind this building.",
     },
     {
-      kor: "주차장은 이 건물 뒤에 있습니까?",
-      eng: "Is the parking lot behind this building.",
+      kor: "주차장은 이 건물 뒤에 있어?",
+      eng: "Is the parking lot behind this building?",
     },
     {
-      kor: "주차장은 이 건물 뒤에 있지 않습니다.",
+      kor: "주차장은 이 건물 뒤에 있지 않아.",
       eng: "The parking lot isn't behind this building.",
     },
     {
-      kor: "주차장은 이 건물 뒤에 있지 않습니까?",
-      eng: "Isn't the parking lot behind this building.",
+      kor: "주차장은 이 건물 뒤에 있지 않아?",
+      eng: "Isn't the parking lot behind this building?",
     },
   ],
   [
@@ -899,7 +899,7 @@ const day5 = [
     },
     {
       kor: "네 자리는 내 자리 옆이야?",
-      eng: "Is your seat is next to mine?",
+      eng: "Is your seat next to mine?",
     },
     {
       kor: "내 자리는 네 자리 옆이 아니야.",
@@ -907,7 +907,7 @@ const day5 = [
     },
     {
       kor: "네 자리는 내 자리 옆이 아니야?",
-      eng: "Isn't your seat is next to mine?",
+      eng: "Isn't your seat next to mine?",
     },
   ],
   [
@@ -917,7 +917,7 @@ const day5 = [
     },
     {
       kor: "시간표는 벽에 붙어 있나요?",
-      eng: "Is the schedule is on the wall.",
+      eng: "Is the schedule on the wall?",
     },
     {
       kor: "시간표는 벽에 붙어 있지 않아요.",
@@ -925,7 +925,7 @@ const day5 = [
     },
     {
       kor: "시간표는 벽에 붙어 있지 않나요?",
-      eng: "Isn't the schedule is on the wall.",
+      eng: "Isn't the schedule on the wall?",
     },
   ],
   [
@@ -1002,20 +1002,20 @@ const day5 = [
   ],
   [
     {
-      kor: "음성자료(복수)는 인터넷에 있습니다.",
-      eng: "The sound file are on the internet.",
+      kor: "음성자료(복수)는 인터넷에 있어.",
+      eng: "The sound files are on the internet.",
     },
     {
-      kor: "음성자료는 인터넷에 있어요?",
-      eng: "Are the sound file on the internet.",
+      kor: "음성자료는 인터넷에 있어?",
+      eng: "Are the sound files on the internet?",
     },
     {
-      kor: "음성자료는 인터넷에 있지 않습니다.",
-      eng: "The sound file aren't on the internet.",
+      kor: "음성자료는 인터넷에 있지 않아.",
+      eng: "The sound files aren't on the internet.",
     },
     {
-      kor: "음성자료는 인터넷에 있지 않아요?",
-      eng: "Aren't the sound file on the internet.",
+      kor: "음성자료는 인터넷에 있지 않아?",
+      eng: "Aren't the sound files on the internet?",
     },
   ],
   [
@@ -1025,7 +1025,7 @@ const day5 = [
     },
     {
       kor: "저 식당은 강남에 있어?",
-      eng: "Is that restaurant in Gangnam.",
+      eng: "Is that restaurant in Gangnam?",
     },
     {
       kor: "저 식당은 강남에 없어.",
@@ -1033,11 +1033,303 @@ const day5 = [
     },
     {
       kor: "저 식당은 강남에 있지 않아?",
-      eng: "Isn't that restaurant in Gangnam.",
+      eng: "Isn't that restaurant in Gangnam?",
     },
   ]
 ];
 
-const DeltaData = [day3, day4, day5];
+const day6 = [
+  [
+    {
+      kor: "냉장고에 많은 음식이 있어.",
+      eng: "There is a lot of food in the fridge.",
+    },
+    {
+      kor: "냉장고에 음식이 많이 있어?",
+      eng: "Is there much food in the fridge?",
+    },
+    {
+      kor: "냉장고에 음식이 많이 없어.",
+      eng: "There isn't much food in the fridge.",
+    },
+    {
+      kor: "냉장고에 음식이 많이 없어?",
+      eng: "Isn't there much food in the fridge?",
+    },
+  ],
+  [
+    {
+      kor: "금요일에 시험이 있어.",
+      eng: "There is a test on Friday.",
+    },
+    {
+      kor: "금요일에 시험 있어?",
+      eng: "Is there a test on Friday?",
+    },
+    {
+      kor: "금요일에 시험 없어.",
+      eng: "There isn't a test on Friday.",
+    },
+    {
+      kor: "금요일에 시험 있지 않아?",
+      eng: "Isn't there a test on Friday?",
+    },
+  ],
+  [
+    {
+      kor: "너 얼굴에 뭐 묻었어.",
+      eng: "There is something on your face.",
+    },
+    {
+      kor: "내 얼굴에 뭐 묻었어?",
+      eng: "Is there something on my face?",
+    },
+    {
+      kor: "너 얼굴에 뭐 안 묻었어.",
+      eng: "There isn't something on your face.",
+    },
+    {
+      kor: "내 울굴에 뭐 묻지 않았어?",
+      eng: "Isn't there something on my face?",
+    },
+  ],
+  [
+    {
+      kor: "내 양말에 구멍 났어.",
+      eng: "There is a hole in my sock.",
+    },
+    {
+      kor: "너 양말에 구멍 났어?",
+      eng: "Is there a hole in your sock?",
+    },
+    {
+      kor: "내 양말은 구멍 안 났어.",
+      eng: "There isn't a hole in my sock.",
+    },
+    {
+      kor: "너 양말에 구멍 안 났어?",
+      eng: "Isn't there a hole in your sock?",
+    },
+  ],
+  [
+    {
+      kor: "밥솥에 밥 있어.",
+      eng: "There is rice in the rice cooker.",
+    },
+    {
+      kor: "밥솥에 밥 있어?",
+      eng: "Is there rice in the rice cooker?",
+    },
+    {
+      kor: "밥솥에 밥 없어.",
+      eng: "There isn't rice in the rice cooker.",
+    },
+    {
+      kor: "밥솥에 밥 있지 않아?",
+      eng: "Isn't there rice in the rice cooker?",
+    },
+  ],
+  [
+    {
+      kor: "책상 뒤에 콘센트가 있어.",
+      eng: "There is an outlet behind the desk.",
+    },
+    {
+      kor: "책상 뒤에 콘센트 있어?",
+      eng: "Is there an outlet behind the desk?",
+    },
+    {
+      kor: "책상 뒤에 콘센트 없어.",
+      eng: "There isn't an outlet behind the desk.",
+    },
+    {
+      kor: "책상 뒤에 콘센트 있지 않아?",
+      eng: "Isn't there an outlet behind the desk?",
+    },
+  ],
+  [
+    {
+      kor: "지갑에 신분증이 있어.",
+      eng: "There is an I.D. in the wallet.",
+    },
+    {
+      kor: "지갑에 신분증 있어?",
+      eng: "Is there an I.D. in the wallet?",
+    },
+    {
+      kor: "지갑에 신분증이 없어.",
+      eng: "There isn't an I.D. in the wallet.",
+    },
+    {
+      kor: "지갑에 신분증이 있지 않아?",
+      eng: "Isn't there an I.D. in the wallet?",
+    },
+  ],
+  [
+    {
+      kor: "이 요리에는 땅콩(성분)이 들어있어.",
+      eng: "There is peanut in this dish.",
+    },
+    {
+      kor: "이 요리에는 땅콩이 들어있어?",
+      eng: "Is there peanut in this dish?",
+    },
+    {
+      kor: "이 요리에는 땅콩이 들어있지 않아.",
+      eng: "There isn't peanut in this dish.",
+    },
+    {
+      kor: "이 요리에는 땅콩이 들어있지 않아?",
+      eng: "Isn't there peanut in this dish?",
+    },
+  ],
+  [
+    {
+      kor: "우리 집 근처에 약국이 있어.",
+      eng: "There is a drug store near my house.",
+    },
+    {
+      kor: "너희 집 근처에 약국이 있어?",
+      eng: "Is there a drug store near your house?",
+    },
+    {
+      kor: "우리 집 근처에는 약국이 없어.",
+      eng: "There isn't a drug store near my house.",
+    },
+    {
+      kor: "너희 집 근처에는 약국이 있지 않아?",
+      eng: "Isn't there a drug store near your house?",
+    },
+  ],
+  [
+    {
+      kor: "문 밖에 누군가 있어.",
+      eng: "There is someone at the door.",
+    },
+    {
+      kor: "문 밖에 누군가 있어?",
+      eng: "Is there someone at the door?",
+    },
+    {
+      kor: "문 밖에는 아무도 없어.",
+      eng: "There isn't someone at the door.",
+    },
+    {
+      kor: "문 밖에 누군가 있지 않아?",
+      eng: "Isn't there someone at the door?",
+    },
+  ],
+  [
+    {
+      kor: "거기 차 많이 막혀.",
+      eng: "There is  a lot of traffic there.",
+    },
+    {
+      kor: "거기 차 많이 막혀?",
+      eng: "Is there much traffic there?",
+    },
+    {
+      kor: "거기 차 막히지 않아.",
+      eng: "There isn't much traffic there.",
+    },
+    {
+      kor: "거기 차 막히지 않아?",
+      eng: "Isn't there much traffic there?",
+    },
+  ],
+  [
+    {
+      kor: "이 거리에는 카페가 많아.",
+      eng: "There are a lot of coffee shops on this street.",
+    },
+    {
+      kor: "이 거리에는 카페가 많아?",
+      eng: "Are there many coffee shops on this street?",
+    },
+    {
+      kor: "이 거리에는 카페가 많지 않아.",
+      eng: "There aren't many coffee shops on this street.",
+    },
+    {
+      kor: "이 거리에는 카페가 많지 않아?",
+      eng: "Aren't there many coffee shops on this street?",
+    },
+  ],
+  [
+    {
+      kor: "이 층에는 화장실이 두 개가 있어.",
+      eng: "There are 2 restrooms on this floor.",
+    },
+    {
+      kor: "이 층에는 화장실이 두 개 있어?",
+      eng: "Are there 2 restrooms on this floor?",
+    },
+    {
+      kor: "이 층에는 화장실이 두 개가 아니야.",
+      eng: "There aren't 2 restrooms on this floor.",
+    },
+    {
+      kor: "이 층에는 화장실이 두 개가 아니야?",
+      eng: "Aren't there 2 restrooms on this floor? ",
+    },
+  ],
+  [
+    {
+      kor: "내 컴퓨터에 영화(복수) 많아.",
+      eng: "There are a lot of movies on my computer.",
+    },
+    {
+      kor: "너의 컴퓨터에는 영화가 많아?",
+      eng: "Are there many movies on your computer?",
+    },
+    {
+      kor: "내 컴퓨터에는 영화가 많지 않아.",
+      eng: "There aren't many movies on my computer.",
+    },
+    {
+      kor: "너의 컴퓨터에는 영화가 많지 않아?",
+      eng: "Aren't there many movies on your computer?",
+    },
+  ],
+  [
+    {
+      kor: "스터디 홀에 학생들이 많아.",
+      eng: "There are a lot of students in the study hall.",
+    },
+    {
+      kor: "스터디 홀에는 학생들이 많아?",
+      eng: "Are there many students in the study hall?",
+    },
+    {
+      kor: "스터디 홀에는 학생들이 많지 않아.",
+      eng: "There aren't many students in the study hall.",
+    },
+    {
+      kor: "스터디 홀에는 학생들이 많지 않아?",
+      eng: "Aren't there many students in the study hall?",
+    },
+  ],
+  [
+    {
+      kor: "우리 가족은 5명이야.",
+      eng: "There are 5 people in my family.",
+    },
+    {
+      kor: "너의 가족은 5명이야?",
+      eng: "Are there 5 people in your family?",
+    },
+    {
+      kor: "우리 가족은 5명이 아니야.",
+      eng: "There aren't 5 people in my family.",
+    },
+    {
+      kor: "너의 가족은 5명이 아니야?",
+      eng: "Aren't there 5 people in your family?",
+    },
+  ]
+  
+];
+
+const DeltaData = [day3, day4, day5, day6];
 
 export default DeltaData;

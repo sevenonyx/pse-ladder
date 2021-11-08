@@ -78,17 +78,17 @@ function Delta() {
   const initLadderList = () => {
     let resultList = new Array(8);
     resultList[0] = [0];
-    resultList[1] = [1, 0];
+    resultList[1] = [0, 1];
     resultList[2] = [0, 1, 2];
-    shuffle(resultList[2]);
+    // shuffle(resultList[2]);
     resultList[3] = [0, 1, 2, 3];
-    shuffle(resultList[3]);
+    // shuffle(resultList[3]);
     resultList[4] = [3];
-    resultList[5] = [2, 3];
+    resultList[5] = [3, 2];
     resultList[6] = [3, 2, 1];
-    shuffle(resultList[6]);
+    // shuffle(resultList[6]);
     resultList[7] = [3, 2, 1, 0];
-    shuffle(resultList[7]);
+    // shuffle(resultList[7]);
     return resultList;
   };
 
