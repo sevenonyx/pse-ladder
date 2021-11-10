@@ -1621,6 +1621,296 @@ const day7 = [
   ]
 ];
 
-const DeltaData = [day3, day4, day5, day6, day7];
+const day8 = [
+  [
+    {
+      kor: "나는 주말에 TV봐.",
+      eng: "I watch TV on the weekend.",
+    },
+    {
+      kor: "너는 주말에 TV봐?",
+      eng: "Do you watch TV on the weekend?",
+    },
+    {
+      kor: "나는 주말에 TV안 봐.",
+      eng: "I don't watch TV on the weekend.",
+    },
+    {
+      kor: "나는 주말에 TV안 봐?",
+      eng: "Don't you watch TV on the weekend?",
+    },
+  ],
+  [
+    {
+      kor: "난 내 친구들을 강남에서 만나.",
+      eng: "I meet my friends in Gangnam.",
+    },
+    {
+      kor: "넌 너의 친구들을 강남에서 만나?",
+      eng: "Do you meet your friends in Gangnam?",
+    },
+    {
+      kor: "난 내 친구들을 강남에서 만나지 않아.",
+      eng: "I don't meet my friends in Gangnam.",
+    },
+    {
+      kor: "넌 너의 친구들을 강남에서 만나지 않아?",
+      eng: "Don't you meet your friends in Gangnam?",
+    },
+  ],
+  [
+    {
+      kor: "나는 SUV를 몰아.",
+      eng: "I drive an SUV.",
+    },
+    {
+      kor: "너는 SUV를 몰아?",
+      eng: "Do you drive an SUV?",
+    },
+    {
+      kor: "나는 SUV를 안 몰아.",
+      eng: "I don't drive an SUV.",
+    },
+    {
+      kor: "나는 SUV를 안 몰아?",
+      eng: "Don't you drive an SUV?",
+    },
+  ],
+  [
+    {
+      kor: "나는 내 친구들하고 영어로 말해.",
+      eng: "I speak English with my friends.",
+    },
+    {
+      kor: "너는 너의 친구들하고 영어로 말해?",
+      eng: "Do you speak English with your friends?",
+    },
+    {
+      kor: "나는 내 친구들하고 영어로 말하지 않아.",
+      eng: "I don't speak English with my friends.",
+    },
+    {
+      kor: "너는 너의 친구들하고 영어로 말하지 않아?",
+      eng: "Don't you speak English with your friends?",
+    },
+  ],
+  [
+    {
+      kor: "우리는 수업 후에 점심 먹어.",
+      eng: "We have lunch after class.",
+    },
+    {
+      kor: "우리 수업 후에 점심 먹어?",
+      eng: "Do we have lunch after class?",
+    },
+    {
+      kor: "우리는 수업 후에 점심 먹지 않아.",
+      eng: "We don't  have lunch after class.",
+    },
+    {
+      kor: "우리 수업 후에 점심 먹지 않아?",
+      eng: "Don't we have lunch after class?",
+    },
+  ],
+  [
+    {
+      kor: "Robin은 Steve 수업 전에 문법을 설명해.",
+      eng: "Robin explains the grammar before Steve's class.",
+    },
+    {
+      kor: "Robin은 Steve 수업 전에 문법을 설명해?",
+      eng: "Does Robin explain the grammar before Steve's class?",
+    },
+    {
+      kor: "Robin은 Steve 수업 전에 문법을 설명하지 않아.",
+      eng: "Robin doesn't explain the grammar before Steve's class.",
+    },
+    {
+      kor: "Robin은 Steve 수업 전에 문법을 설명하지 않아?",
+      eng: "Doesn't Robin explain the grammar before Steve's class?",
+    },
+  ],
+  [
+    {
+      kor: "걔(남자)는 식사 후에 비타민(복수)을 먹어.",
+      eng: "He takes vitamins after meals.",
+    },
+    {
+      kor: "걔는 식사 후에 비타민을 먹어?",
+      eng: "Does he take vitamins after meals?",
+    },
+    {
+      kor: "걔는 식사 후에 비타민을 먹지 않아.",
+      eng: "He don't take vitamins after meals.",
+    },
+    {
+      kor: "걔는 식사 후에 비타민을 먹지 않아?",
+      eng: "Doesn't he take vitamins after meals?",
+    },
+  ],
+  [
+    {
+      kor: "Steve는 아침에 커피를 마셔.",
+      eng: "Steve drinks coffee in the morning.",
+    },
+    {
+      kor: "Steve는 아침에 커피를 마셔?",
+      eng: "Does Steve drink coffee in the morning?",
+    },
+    {
+      kor: "Steve는 아침에 커피를 마시지 않아.",
+      eng: "Steve doesn't  drinks coffee in the morning.",
+    },
+    {
+      kor: "Steve는 아침에 커피를 마시지 않아?",
+      eng: "Doesn't Steve drink coffee in the morning?",
+    },
+  ],
+  [
+    {
+      kor: "걔(여자)는 자기 옷을 백화점에서 사.",
+      eng: "She buys her clothes at the department store.",
+    },
+    {
+      kor: "걔는 자기 옷을 백화점에서 사?",
+      eng: "Does she buy her clothes at the department store?",
+    },
+    {
+      kor: "걔는 자기 옷을 백화점에서 사지 않아.",
+      eng: "She doesn't buy her clothes at the department store.",
+    },
+    {
+      kor: "걔는 자기 옷을 백화점에서 사지 않아?",
+      eng: "Doesn't she buy her clothes at the department store?",
+    },
+  ],
+  [
+    {
+      kor: "CV들은 수업 전에 출석을 불러.",
+      eng: "The CVs call roll before class.",
+    },
+    {
+      kor: "CV들은 수업 전에 출석을 불러?",
+      eng: "Do the CVs call roll before class?",
+    },
+    {
+      kor: "CV들은 수업 전에 출석을 부르지 않아.",
+      eng: "The CVs don't call roll before class.",
+    },
+    {
+      kor: "CV들은 수업 전에 출석을 부르지 않아?",
+      eng: "Don't the CVs call roll before class?",
+    },
+  ],
+  [
+    {
+      kor: "거긴 일본 음식을 팔아.",
+      eng: "They serve Japanese food.",
+    },
+    {
+      kor: "거긴 일본 음식을 팔아?",
+      eng: "Do they serve Japanese food?",
+    },
+    {
+      kor: "거긴 일본 음식을 팔지 않아.",
+      eng: "They don't serve Japanese food.",
+    },
+    {
+      kor: "거긴 일본 음식을 팔지 않아?",
+      eng: "Don't they serve Japanese food?",
+    },
+  ],
+  [
+    {
+      kor: "그 학생들은 매일 대중교통을 이용해.",
+      eng: "The students use public transportation every day.",
+    },
+    {
+      kor: "그 학생들은 매일 대중교통을 이용해?",
+      eng: "Do the students use public transportation every day?",
+    },
+    {
+      kor: "그 학생들은 매일 대중교통을 이용하지 않아.",
+      eng: "The students don't use public transportation every day.",
+    },
+    {
+      kor: "그 학생들은 매일 대중교통을 이용하지 않아?",
+      eng: "Don't the students use public transportation every day?",
+    },
+  ],
+  [
+    {
+      kor: "걔들은 Study hall에서 문장들을 반복해.",
+      eng: "They repeat the sentences in the study hall.",
+    },
+    {
+      kor: "걔들은 Study hall에서 문장들을 반복해?",
+      eng: "Do they repeat the sentences in the study hall?",
+    },
+    {
+      kor: "걔들은 Study hall에서 문장들을 반복하지 않아.",
+      eng: "They don't repeat the sentences in the study hall.",
+    },
+    {
+      kor: "걔들은 Study hall에서 문장들을 반복하지 않아?",
+      eng: "Don't they repeat the sentences in the study hall?",
+    },
+  ],
+  [
+    {
+      kor: "걔들은 주말에 자기 빨래를 해.",
+      eng: "They do their laundry on the weekend.",
+    },
+    {
+      kor: "걔들은 주말에 자기 빨래를 해?",
+      eng: "Do they do their laundry on the weekend?",
+    },
+    {
+      kor: "걔들은 주말에 자기 빨래를 하지 않아.",
+      eng: "They don't do their laundry on the weekend.",
+    },
+    {
+      kor: "걔들은 주말에 자기 빨래를 하지 않아?",
+      eng: "Don't they do their laundry on the weekend?",
+    },
+  ],
+  [
+    {
+      kor: "나는 시간 있을 때 video game(복수)을 해.",
+      eng: "I play video games in my free time.",
+    },
+    {
+      kor: "너는 시간 있을 때 video game을 해?",
+      eng: "Do you play video games in my free time?",
+    },
+    {
+      kor: "너는 시간 있을 때 video game을 하지 않아.",
+      eng: "I don't play video games in my free time.",
+    },
+    {
+      kor: "너는 시간 있을 때 video game을 하지 않아?",
+      eng: "Don't you play video games in my free time?",
+    },
+  ],
+  [
+    {
+      kor: "나는 밤에 내 핸드폰을 충전해.",
+      eng: "I charge my phone at night.",
+    },
+    {
+      kor: "너는 밤에 내 핸드폰을 충전해?",
+      eng: "Do you charge my phone at night?",
+    },
+    {
+      kor: "나는 밤에 내 핸드폰을 충전하지 않아.",
+      eng: "I don't charge my phone at night.",
+    },
+    {
+      kor: "너는 밤에 내 핸드폰을 충전하지 않아?",
+      eng: "Don't you charge my phone at night?",
+    },
+  ]
+];
+const DeltaData = [day3, day4, day5, day6, day7, day8];
 
 export default DeltaData;
