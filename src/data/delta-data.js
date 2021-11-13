@@ -1035,7 +1035,7 @@ const day5 = [
       kor: "저 식당은 강남에 있지 않아?",
       eng: "Isn't that restaurant in Gangnam?",
     },
-  ]
+  ],
 ];
 
 const day6 = [
@@ -1326,8 +1326,7 @@ const day6 = [
       kor: "너의 가족은 5명이 아니야?",
       eng: "Aren't there 5 people in your family?",
     },
-  ]
-  
+  ],
 ];
 
 const day7 = [
@@ -1618,7 +1617,7 @@ const day7 = [
       kor: "Delta들은 3층에서 공부하지 않아?",
       eng: "Don't the Deltas study on the 3rd floor?",
     },
-  ]
+  ],
 ];
 
 const day8 = [
@@ -1909,8 +1908,270 @@ const day8 = [
       kor: "너는 밤에 내 핸드폰을 충전하지 않아?",
       eng: "Don't you charge my phone at night?",
     },
-  ]
+  ],
 ];
-const DeltaData = [day3, day4, day5, day6, day7, day8];
+
+const day9 = [
+  [
+    {
+      kor: "나 일찍 퇴근해.",
+      eng: "I get off work early.",
+    },
+    {
+      kor: "너 일찍 퇴근해?",
+      eng: "Do you get off work early?",
+    },
+    {
+      kor: "나 일찍 퇴근 안해.",
+      eng: "I don't get off work early.",
+    },
+    {
+      kor: "너 일찍 퇴근 안해?",
+      eng: "Don't you get off work early?",
+    },
+  ],
+  [
+    {
+      kor: "걔(남자)는 또박또박 말해.",
+      eng: "He speaks clearly.",
+    },
+    {
+      kor: "걔는 또박또박 말해?",
+      eng: "Does he speak clearly?",
+    },
+    {
+      kor: "걔는 또박또박 말하지 않아.",
+      eng: "He doesn't speak clearly.",
+    },
+    {
+      kor: "걔는 또박또박 말하지 않아?",
+      eng: "Doesn't he speak clearly?",
+    },
+  ],
+  [
+    {
+      kor: "그 문은 자동으로 열려.",
+      eng: "The door opens automatically.",
+    },
+    {
+      kor: "그 문은 자동으로 열려?",
+      eng: "Does the door open automatically?",
+    },
+    {
+      kor: "그 문은 자동으로 열리지 않아.",
+      eng: "The door doesn't open automatically.",
+    },
+    {
+      kor: "그 문은 자동으로 열리지 않아?",
+      eng: "Doesn't the door open automatically?",
+    },
+  ],
+  [
+    {
+      kor: "한국 버스 기사들은 위험하게 운전해.",
+      eng: "Korean bus drivers drive dangerously.",
+    },
+    {
+      kor: "한국 버스 기사들은 위험하게 운전해?",
+      eng: "Do Korean bus drivers drive dangerously?",
+    },
+    {
+      kor: "한국 버스 기사들은 위험하게 운전하지 않아.",
+      eng: "Korean bus drivers don't drive dangerously.",
+    },
+    {
+      kor: "한국 버스 기사들은 위험하게 운전하지 않아?",
+      eng: "Don't Korean bus drivers drive dangerously?",
+    },
+  ],
+  [
+    {
+      kor: "Chris는 자기 전화를 가끔 받아.",
+      eng: "Chris sometimes answers his phone.",
+    },
+    {
+      kor: "Chris는 자기 전화를 가끔 받아?",
+      eng: "Does Chris sometimes answer his phone.",
+    },
+    {
+      kor: "Chris가 자기 전화를 받을 때도 있어?",
+      eng: "Does Chris ever answer his phone?",
+    },
+  ],
+  [
+    {
+      kor: "나는 항상 저녁에 우리 강아지한테 밥 줘.",
+      eng: "I always feed my dog in the evening.",
+    },
+    {
+      kor: "너는 항상 저녁에 너의 강아지한테 밥 줘?",
+      eng: "Do you always feed your dog in the evenig?",
+    },
+    {
+      kor: "너, 네 강아지에게 밥 줄 때도 있어?",
+      eng: "Do you ever feed your dog?",
+    },
+  ],
+  [
+    {
+      kor: "난 주로 아침에 샤워 해.",
+      eng: "I usually take a shower in the morning.",
+    },
+    {
+      kor: "넌 주로 아침에 샤워 해?",
+      eng: "Do you usually take a shower in the morning?",
+    },
+    {
+      kor: "너 샤워할 때도 있어?",
+      eng: "Do you ever take a shower?",
+    },
+  ],
+  [
+    {
+      kor: "걔(여자)는 자주 자기 숙제를 깜박해.",
+      eng: "She often forgets her homework.",
+    },
+    {
+      kor: "걔는 자주 자기 숙제를 깜박해?",
+      eng: "Does she often forget her homework?",
+    },
+    {
+      kor: "걔가 자기 숙제를 깜박할 때도 있어?",
+      eng: "Does she ever forget her homework?",
+    },
+  ],
+  [
+    {
+      kor: "Steve는 평일에 절대로 술을 안 마셔.",
+      eng: "Steve never drinks on weekdays.",
+    },
+    {
+      kor: "Steve는 평일에 절대로 술을 안 마셔?",
+      eng: "Does Steve never drink on weekdays?",
+    },
+    {
+      kor: "Steve가 평일에 술 마실 때도 있어?",
+      eng: "Does Steve ever drink on weekdays?",
+    },
+  ],
+  [
+    {
+      kor: "걔(남자)는 설거지를 거의 안 해.",
+      eng: "He hardly ever does the dishes.",
+    },
+    {
+      kor: "걔는 설거지를 거의 안 해?",
+      eng: "Does he hardly ever do the dishes?",
+    },
+    {
+      kor: "걔가 설거지를 할 때도 있어?",
+      eng: "Does he ever do the dishes?",
+    },
+  ],
+  [
+    {
+      kor: "우리 아버지께선 집안일을 거의 안 하셔.",
+      eng: "My father seldom does the chores.",
+    },
+    {
+      kor: "너희 아버지께선 집안일을 거의 안 하셔?",
+      eng: "Does your father seldom do the chores?",
+    },
+    {
+      kor: "너희 아버지께서 집안일을 하실 때도 있니?",
+      eng: "Does your father do the chores?",
+    },
+  ],
+  [
+    {
+      kor: "난 금요일 밤에 항상 친구들하고 놀아.",
+      eng: "I always hang out with my friends on Friday nights.",
+    },
+    {
+      kor: "넌 금요일 밤에 항상 친구들하고 놀아?",
+      eng: "Do you always hang out with your friends on Friday nights?",
+    },
+    {
+      kor: "너 친구들하고 놀 때도 있어?",
+      eng: "Do you ever hang out with your friends?",
+    },
+  ],
+  [
+    {
+      kor: "걔(여자)는 자주 약속들을 깨.",
+      eng: "She often breaks promises.",
+    },
+    {
+      kor: "걔는 자주 약속들을 깨?",
+      eng: "Does she often breaks promises?",
+    },
+    {
+      kor: "걔가 약속들을 깰 때 도 있어?",
+      eng: "Does she ever break promises?",
+    },
+  ],
+  [
+    {
+      kor: "나, 일주일에 4번 운동해.",
+      eng: "I exercise 4 times a week.",
+    },
+    {
+      kor: "난 한 달에 영화 2편 봐.",
+      eng: "I watch 2 movies a month.",
+    },
+    {
+      kor: "난 하루에 커피 다섯 잔 마셔.",
+      eng: "I drink 5 cups of coffee a day.",
+    },
+    {
+      kor: "난 여자친구한테 하루에 두 번 전화해.",
+      eng: "I call my girlfriend twice a day.",
+    },
+  ],
+  [
+    {
+      kor: "난 하루에 14시간 일해.",
+      eng: "I work 14 hours a day.",
+    },
+    {
+      kor: "한국 사람들은 3년에 한 번씩 자기 차를 바꿔.",
+      eng: "Korean people change their car once every 3 years.",
+    },
+    {
+      kor: "나, 네 시간 마다 한 번씩 이 약을 먹어.",
+      eng: "I take this medicine once every 4 hours.",
+    },
+  ],
+  [
+    {
+      kor: "걔(여자)는 2주에 한 번 목욕을 해.",
+      eng: "She takes a bath once every 2 weeks.",
+    },
+    {
+      kor: "그 학생들은 하루에 5시간씩 공부해.",
+      eng: "The students study 5 hours a day.",
+    },
+    {
+      kor: "걔(남자)는 일주일에 세 번 학교 가.",
+      eng: "He goes to school 3 times a week.",
+    },
+  ],
+  [
+    {
+      kor: "나, 하루에 두 번 양치해.",
+      eng: "I brush my teeth twice a day.",
+    },
+    {
+      kor: "Steve는 5년에 한 번씩 미국에 가.",
+      eng: "Steve goes to America once every 5 years.",
+    },
+    {
+      kor: "걔네들 하루에 네 번 먹어.",
+      eng: "They eat 4 times a day.",
+    },
+  ],
+];
+
+const DeltaData = [day3, day4, day5, day6, day7, day8, day9];
 
 export default DeltaData;

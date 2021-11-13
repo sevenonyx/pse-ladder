@@ -52,6 +52,7 @@ function Delta() {
   const [ladderList, setLadderList] = useState([]);
   const [repetLimit, setRepetLimit] = useState(0);
   const [isRandomMode, setRandomMode] = useState(false);
+  const [lastLadderIdx, setLastLadderIdx] = useState(0);
 
   useEffect(() => {
     setLast(false);
@@ -63,7 +64,11 @@ function Delta() {
       currentIdx = 0;
       setLadderIdx(0);
       setCurrentCount(0);
-      setLadderList(initLadderList());
+
+      const index = DeltaData[day][number].length === 4 ? 7 : 5;
+      setLastLadderIdx(index);
+      setLadderList(initLadderList(index));
+
       // 마지막 사다리의 경우 다음 사다리 이동 버튼을 제외하기 위해 상태값을 관리
       if (day !== "home" && parseInt(number) === DeltaData[day].length - 1) {
         setLastNumber(true);
@@ -75,20 +80,29 @@ function Delta() {
     history.push(path);
   };
 
-  const initLadderList = () => {
+  const initLadderList = (count) => {
     let resultList = new Array(8);
-    resultList[0] = [0];
-    resultList[1] = [0, 1];
-    resultList[2] = [0, 1, 2];
-    // shuffle(resultList[2]);
-    resultList[3] = [0, 1, 2, 3];
-    // shuffle(resultList[3]);
-    resultList[4] = [3];
-    resultList[5] = [3, 2];
-    resultList[6] = [3, 2, 1];
-    // shuffle(resultList[6]);
-    resultList[7] = [3, 2, 1, 0];
-    // shuffle(resultList[7]);
+    if (count === 7) {
+      resultList[0] = [0];
+      resultList[1] = [0, 1];
+      resultList[2] = [0, 1, 2];
+      // shuffle(resultList[2]);
+      resultList[3] = [0, 1, 2, 3];
+      // shuffle(resultList[3]);
+      resultList[4] = [3];
+      resultList[5] = [3, 2];
+      resultList[6] = [3, 2, 1];
+      // shuffle(resultList[6]);
+      resultList[7] = [3, 2, 1, 0];
+      // shuffle(resultList[7]);
+    } else if (count === 5) {
+      resultList[0] = [0];
+      resultList[1] = [0, 1];
+      resultList[2] = [0, 1, 2];
+      resultList[3] = [2];
+      resultList[4] = [2, 1];
+      resultList[5] = [2, 1, 0];
+    }
     return resultList;
   };
 
@@ -100,7 +114,10 @@ function Delta() {
       currentIdx = currentIdx + 1;
       setCurrentCount(ladderList[ladderIdx][currentIdx]);
       // 8번째 반복 사다리에 도달하고 마지막 반복이면 다음은 종료이다.
-      if (ladderIdx >= 7 && currentIdx === ladderList[ladderIdx].length - 1)
+      if (
+        ladderIdx >= lastLadderIdx &&
+        currentIdx === ladderList[ladderIdx].length - 1
+      )
         setLast(true);
     }
   };
@@ -205,7 +222,7 @@ function Delta() {
               <Badge bg="primary">Day {parseInt(day) + 3}</Badge> {"  "}
               <Badge bg="primary">{parseInt(number) + 1}번</Badge> {"  "}
               <Badge bg={ladderIdx >= 4 ? "warning" : "primary"}>
-                STEP {ladderIdx + 1} / 8
+                STEP {ladderIdx + 1} / {lastLadderIdx + 1}
               </Badge>{" "}
             </h1>
           </Header>
@@ -269,7 +286,7 @@ function Delta() {
                 </>
               ) : (
                 <>
-                  {ladderIdx >= 7 ? null : (
+                  {ladderIdx >= lastLadderIdx ? null : (
                     <div className="d-flex bd-highlight">
                       <Button
                         className="m-1 flex-grow-1"
