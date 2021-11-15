@@ -2172,6 +2172,297 @@ const day9 = [
   ],
 ];
 
-const DeltaData = [day3, day4, day5, day6, day7, day8, day9];
+const day11 = [
+  [
+    {
+      kor: "나 지금 카페에서 공부하고 있어.",
+      eng: "I'm studying at a coffee shop now.",
+    },
+    {
+      kor: "너 지금 카페에서 공부하고 있어?",
+      eng: "Are you studying at a coffee shop now?",
+    },
+    {
+      kor: "나 지금 카페에서 공부 안해.",
+      eng: "I'm not studying at a coffee shop now.",
+    },
+    {
+      kor: "너 지금 카페에서 공부하고 있는거 아니야?",
+      eng: "Aren't you studying at a coffee shop now.",
+    },
+  ],
+  [
+    {
+      kor: "나 지금 걔(남자)한테 문자하고 있어.",
+      eng: "I'm texting him.",
+    },
+    {
+      kor: "너 지금 걔한테 문자하고 있어?",
+      eng: "Are you texting him now?",
+    },
+    {
+      kor: "나 지금 걔한테 문자하고 있는거 아니야.",
+      eng: "I'm not texting him now.",
+    },
+    {
+      kor: "너 지금 걔한테 문자하고 있는거 아니야?",
+      eng: "Aren't you texting him now?",
+    },
+  ],
+  [
+    {
+      kor: "나는 이번 달에 Delta 수업 듣고 있어.",
+      eng: "I'm taking the Delta class this month.",
+    },
+    {
+      kor: "너는 이번달에 Delta 수업 듣고 있어?",
+      eng: "Are you taking the Delta class this month?",
+    },
+    {
+      kor: "나는 이번 달에 Delta 수업 듣고 있지 않아.",
+      eng: "I'm not taking the Delta class this month.",
+    },
+    {
+      kor: "너는 이번 달에 Delta 수업 듣고 있지 않아?",
+      eng: "Aren't you taking the Delta class this month?",
+    },
+  ],
+  [
+    {
+      kor: "넌 날 귀찮게 하고 있어.",
+      eng: "You are bothering me.",
+    },
+    {
+      kor: "내가 널 귀찮게 하고 있나?",
+      eng: "Am I bothering you?",
+    },
+    {
+      kor: "넌 날 귀찮게 하고 있지 않아.",
+      eng: "You aren't bothering me.",
+    },
+    {
+      kor: "내가 널 귀찮게 하고 있지 않나?",
+      eng: "Aren't I bothering you?",
+    },
+  ],
+  [
+    {
+      kor: "우리 엄마는 저녁을 만들고 계셔.",
+      eng: "My mother is making dinner.",
+    },
+    {
+      kor: "너희 엄마는 저녁을 만들고 계셔?",
+      eng: "Is your mother making dinner?",
+    },
+    {
+      kor: "우리 엄마는 저녁을 만들고 계신게 아니야.",
+      eng: "My mother isn't making dinner.",
+    },
+    {
+      kor: "너희 엄마는 저녁을 만들고 계시지 않아?",
+      eng: "Isn't your mother making dinner?",
+    },
+  ],
+  [
+    {
+      kor: "저 팀이 이기고 있어.",
+      eng: "That team is winning.",
+    },
+    {
+      kor: "저 팀이 이기고 있어?",
+      eng: "Is that team winning?",
+    },
+    {
+      kor: "저 팀은 이기지 못하고 있어.",
+      eng: "That team isn't winning.",
+    },
+    {
+      kor: "저 팀은 이기지 못하고 있지 않아?",
+      eng: "Isn't that team winning?",
+    },
+  ],
+  [
+    {
+      kor: "나, 뭘 좀 찾고 있어.",
+      eng: "I'm looking for something.",
+    },
+    {
+      kor: "너 뭐 찾고 있어?",
+      eng: "Are you looking for something.",
+    },
+    {
+      kor: "나, 뭐 찾고 있는거 아니야.",
+      eng: "I'm not looking for something.",
+    },
+    {
+      kor: "너 뭐 찾고 있는거 아니야?",
+      eng: "Aren't you looking for something?",
+    },
+  ],
+  [
+    {
+      kor: "그 사람들은 영화표(복수)를 사고 있어.",
+      eng: "They are buying tickets for the movie.",
+    },
+    {
+      kor: "그 사람들은 영화표를 사고 있어?",
+      eng: "Are they buying tickets for the movie?",
+    },
+    {
+      kor: "그 사람들은 영화표를 사고 있지 않아.",
+      eng: "They aren't buying tickets for the movie.",
+    },
+    {
+      kor: "그 사람들은 영화표를 사고 있지 않아?",
+      eng: "Aren't they buying tickets for the movie?",
+    },
+  ],
+  [
+    {
+      kor: "나 요즘 영어 배우고 있어.",
+      eng: "I'm learning English these days.",
+    },
+    {
+      kor: "너 요즘 영어 배우고 있어?",
+      eng: "Are you learning English these days?",
+    },
+    {
+      kor: "나 요즘 영어 배우고 있는거 아니야.",
+      eng: "I'm not learning English these days.",
+    },
+    {
+      kor: "너 요즘 영어 배우고 있지 않아?",
+      eng: "Aren't you learning English these days?",
+    },
+  ],
+  [
+    {
+      kor: "나, 오늘 렌즈 꼈어.(나, 오늘 렌즈를 끼고 있어)",
+      eng: "I'm wearing contacts today.",
+    },
+    {
+      kor: "너, 오늘 렌즈 끼고 있어?",
+      eng: "Are you wearing contacts today?",
+    },
+    {
+      kor: "나, 오늘 렌즈 안 끼고 있어.",
+      eng: "I'm not wearing contacts today.",
+    },
+    {
+      kor: "너, 오늘 렌즈 끼고 있지 않아?",
+      eng: "Aren't you wearing contacts today",
+    },
+  ],
+  [
+    {
+      kor: "Steve는 덥고 습한 날씨를 정말 싫어해.",
+      eng: "Steve hates hot and humid weather.",
+    },
+    {
+      kor: "Steve는 덥고 습한 날씨를 정말 싫어해?",
+      eng: "Does Steve hate hot and humid weather?",
+    },
+    {
+      kor: "Steve는 덥고 습한 날씨를 정말 싫어하는건 아니야.",
+      eng: "Steve doesn't hate hot and humid weather.",
+    },
+    {
+      kor: "Steve는 덥고 습한 날씨는 정말 싫어하지 않아?",
+      eng: "Doesn't Steve hate hot and humid weather?",
+    },
+  ],
+  [
+    {
+      kor: "우리 언니(누나)는  명품가방을 갖고 싶어 해.",
+      eng: "My sister wants a designer bag.",
+    },
+    {
+      kor: "너희 언니(누나)는 명품가방을 갖고 싶어 해?",
+      eng: "Does your sister want a designer bag?",
+    },
+    {
+      kor: "우리 언니(누나)는 명품가방을 갖고 싶은게 아니야.",
+      eng: "My sister doesn't want a designer bag.",
+    },
+    {
+      kor: "너희 언니(누나)는 명품가방을 갖고 싶어하지 않아?",
+      eng: "Doesn't your sister want a designer bag?",
+    },
+  ],
+  [
+    {
+      kor: "넌 나를 놀라게 해.",
+      eng: "You surprise me.",
+    },
+    {
+      kor: "내가 너를 놀라게 해?",
+      eng: "Do I surprise you?",
+    },
+    {
+      kor: "넌 나를 놀라게 하지 않아.",
+      eng: "You don't surprise me.",
+    },
+    {
+      kor: "내가 너를 놀라게 하지 않아?",
+      eng: "Don't I surprise you?",
+    },
+  ],
+  [
+    {
+      kor: "Steve는 내 이름을 기억하고 있어.",
+      eng: "Steve remembers my name.",
+    },
+    {
+      kor: "Steve는 너의 이름을 기억해?",
+      eng: "Does Steve remember your name?",
+    },
+    {
+      kor: "Steve는 내 이름을 기억하고 있지 않아.",
+      eng: "Steve doesn't remember my name.",
+    },
+    {
+      kor: "Steve는 너의 이름을 기억하고 있지 않아?",
+      eng: "Doesn't Steve remember your name?",
+    },
+  ],
+  [
+    {
+      kor: "난 금요일에 소개팅이 있어.",
+      eng: "I have a blind date on Friday.",
+    },
+    {
+      kor: "넌 금요일에 소개팅이 있어?",
+      eng: "Do you have a blind date on Friday?",
+    },
+    {
+      kor: "난 금요일에 소개팅이 없어.",
+      eng: "I don't have a blind date on Friday.",
+    },
+    {
+      kor: "넌 금요일에 소개팅이 없어?",
+      eng: "Don't you have a blind date on Friday?",
+    },
+  ],
+  [
+    {
+      kor: "난 지금 당장 네 도움이 필요해.",
+      eng: "I need your help right now.",
+    },
+    {
+      kor: "넌 지금 당장 내 도움이 필요해?",
+      eng: "Do you need my help right now?",
+    },
+    {
+      kor: "난 지금 당장은 네 도움이 필요하지 않아.",
+      eng: "I don't need your help right now.",
+    },
+    {
+      kor: "넌 지금 장 내 도움이 필요하지 않아?",
+      eng: "Don't you need my help right now?",
+    },
+  ]
+];
+
+const DeltaData = [day3, day4, day5, day6, day7, day8, day9, day11];
 
 export default DeltaData;
